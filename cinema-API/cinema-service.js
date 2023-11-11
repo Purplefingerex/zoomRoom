@@ -112,14 +112,17 @@ function createScreening(movieTitle, showTime, capacity, price) {
 // 6. feladat
 
 function removeScreening(id) {
-	const chosenMovie = getScreening(id);
-	if (chosenMovie.bought_tickets === 0) {
-		console.log(cinemaData.screenings + "remove func");
-		return;
+	const filteredScreenings = cinemaData.screenings.filter(
+		screening => screening.id !== id || screening.bought_tickets !== 0
+	);
+	if (filteredScreenings.length != cinemaData.screenings.length) {
+		cinemaData.screenings = filteredScreenings;
+		console.log("Screening removed.");
+		save(cinemaData);
 	}
 }
 
-removeScreening("912df4c5-0ed0-49ed-be52-3da00cf1f049");
+removeScreening("9499f9e1-e150-48f8-aa3a-0428ef68c589");
 
 module.exports = {
 	getFreeSeats,
