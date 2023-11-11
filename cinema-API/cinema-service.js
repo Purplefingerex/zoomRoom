@@ -54,7 +54,7 @@ const getFreeSeats = id => {
 function getScreening(id) {
 	const screening = cinemaData.screenings.find((screening, index) => {
 		screening.id === id;
-		console.log(index);
+		return screening;
 	});
 	return screening;
 }
@@ -114,8 +114,9 @@ function createScreening(movieTitle, showTime, capacity, price) {
 function removeScreening(id) {
 	const chosenMovie = getScreening(id);
 	if (chosenMovie.bought_tickets === 0) {
+		console.log(cinemaData.screenings + "remove func");
+		return;
 	}
-	console.log(cinemaData.screenings);
 }
 
 removeScreening("912df4c5-0ed0-49ed-be52-3da00cf1f049");
