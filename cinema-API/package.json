@@ -1,0 +1,15 @@
+{
+  "name": "cinema-api",
+  "version": "1.0.0",
+  "description": "> Egy képzeletbeli mozinak szeretnénk egy jegy eladó backend-et fejleszteni. > Ebben a moziban mindenki érkezés szerint foglalja el a helyét.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
